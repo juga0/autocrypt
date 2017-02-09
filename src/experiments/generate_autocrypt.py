@@ -85,7 +85,8 @@ def send_email(msg,
     """
     # TODO: several recipients
     s = smtplib.SMTP(smtp_server)
-    s.sendmail(sender, recipient, msg.as_string())
+    r = s.sendmail(sender, recipient, msg.as_string())
     logger.debug('Sending Email to %s from %s to %s',
                  smtp_server, sender, recipient)
-    s.quit()
+    # s.quit()
+    return r

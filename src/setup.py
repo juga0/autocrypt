@@ -1,4 +1,5 @@
-from setuptools import setup
+# from setuptools import setup
+from setuptools import setup, find_packages
 
 def main():
     setup(
@@ -19,10 +20,17 @@ def main():
                      'Topic :: Utilities',
                      'Intended Audience :: Developers',
                      'Programming Language :: Python'],
-        packages=['autocrypt'],
+        # packages=['autocrypt', 'experiments'],
+        packages=find_packages(exclude=['contrib', 'doc', 'tests*']),
         zip_safe=False,
+        dependency_links=[
+            "https://pypi.python.org/simple/PGPy==0.4"
+        ],
+        scripts=[
+            'autocrypt/bot.py',
+            'experiments/send_autocrypt_mail.py'
+        ],
     )
 
 if __name__ == '__main__':
     main()
-

@@ -6,9 +6,9 @@
 import argparse
 import logging
 
-import gpg_utils
-import generate_autocrypt
-from _version import version
+from experiments import gpg_utils
+from experiments import generate_autocrypt
+from experiments._version import version
 
 DEBUG = False
 
