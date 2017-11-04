@@ -53,3 +53,13 @@ If you are interested to learn more or want to help please :doc:`join our channe
 where we meet next <contact>`.
 
 See :doc:`contents` for an index of all docs and discussion results so far.
+
+.. TODO: This should be moved to the sidebar
+
+Index
+======
+:ref:`genindex`
+
+Glossary
+=========
+:doc:`Glossary <glossary>`
