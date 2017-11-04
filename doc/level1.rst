@@ -95,6 +95,9 @@ scope for Level 1.
 Header injection in outbound mail
 ---------------------------------
 
+.. TODO: i don't know how to make this a link to the appendix
+See :ref:`own_state`
+
 During message composition, if the ``From:`` header of the
 outgoing e-mail matches an address that the Autocrypt-capable agent
 knows the secret key material (``own_state.secret_key``) for, it
