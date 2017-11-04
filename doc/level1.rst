@@ -249,10 +249,11 @@ Internal state storage
 See :ref:`peer-state` for a definition of the structure of
 information stored about the client's communications peers.
 
-Autocrypt clients keep state about their peers, to be able to handle
-several nuanced situations that have caused trouble/annoyance in the
-past.  This state is updated even when the peer sends mail without an
-``Autocrypt`` header.
+:term:`Agents` MAY also store additional information gathered for heuristic
+purposes, or for other cryptographic schemes.  However, in order to
+support future syncing of Autocrypt state between agents, it is
+critical that Autocrypt-capable agents maintain the :term:`state` specified
+here.
 
 For example, if a remote peer disables Autocrypt or drops back to
 using a non-Autocrypt MUA only we must be able to disable sending
@@ -378,7 +379,7 @@ requirement for Autocrypt-capable agents to always follow the
 Autocrypt recommendation.
 
 That said, all Autocrypt-capable agents should be able to calculate
-the same Autocrypt recommendation due to their internal state.
+the same Autocrypt recommendation due to their :term:`internal state`.
 
 The Autocrypt recommendation depends on the list of recipient
 addresses for the message being composed.  When the user edits the
@@ -472,7 +473,7 @@ clear.
 
 To avoid leaking cleartext from the original encrypted message in this
 case, the MUA MAY prepare the cleartext reply without including any
-of the typically quoted and attributed text from the previous message.
+of the typically quoted and :term:`attributed text` from the previous message.
 Additionally, the MUA MAY include brief text in message body along the
 lines of::
 
@@ -698,17 +699,17 @@ both programmatically and manually.
 
 - Both the To and From headers MUST be the address of the user account.
 
-- The Autocrypt Setup Message MUST contain an ``Autocrypt-Setup-Message: v1`` header.
+- The :term:`Autocrypt Setup Message` MUST contain an :term:`Autocrypt-Setup-Message`: ``v1`` header.
 
 - The Autocrypt Setup Message MUST have a ``multipart/mixed`` structure,
   and it MUST have as first part a human-readable description about
   the purpose of the message (e.g. ``text/plain`` or ``text/html`` or
   ``multipart/alternative``).
 
-- The second mime part of the message MUST have the content-type
-  ``application/autocrypt-setup``. It consists of the user's
-  ASCII-armored secret key, encrypted in an ASCII-armored :rfc:`RFC
-  4880 Symmetrically Encrypted Data Packet<4880#section-5.7>`
+- The second mime part of the message MUST have the type
+  :term:`application/autocrypt-setup`. It consists of the user's
+  ASCII-armored secret key, encrypted in an ASCII-armored OpenPGP
+  symmetrically encrypted data packet.
 
 - There MAY be text above or below the ASCII-armored encrypted data in
   the second MIME part, which MUST be ignored while processing. This
@@ -945,7 +946,7 @@ Example Setup Message
    This is the Autocrypt setup message.
 
    --==break1==
-   Content-Type: application/autocrypt-key-backup
+   Content-Type: :term:`application/autocrypt-key-backup`
    Content-Disposition: attachment
 
    Possibly a descriptive text, informing users about this file's
